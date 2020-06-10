@@ -1,0 +1,451 @@
+@font-face {
+  font-family: 'Blogfont'; /* project id 1842100 */
+  src: url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.eot");
+  src: url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.eot?#iefix") format('embedded-opentype'), url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.woff2") format('woff2'), url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.woff") format('woff'), url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.ttf") format('truetype'), url("//at.alicdn.com/t/font_1842100_he8ga4uxvyo.svg#Blogfont") format('svg');
+}
+.blogfont {
+  font-family: "Blogfont" !important;
+  font-size: 15px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+a {
+  transition: color 0.2s;
+}
+a,
+alink,
+ahover,
+aactive,
+avisited {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+ul,
+li {
+  list-style: none;
+}
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  overflow-x: hidden;
+}
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  background-color: #ccc;
+}
+@-moz-keyframes slideUp {
+  from {
+    opacity: 1;
+    height: auto;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+@-webkit-keyframes slideUp {
+  from {
+    opacity: 1;
+    height: auto;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+@-o-keyframes slideUp {
+  from {
+    opacity: 1;
+    height: auto;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    height: auto;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+@-moz-keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+  }
+}
+@-webkit-keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+  }
+}
+@-o-keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+  }
+}
+#header {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+#header .menu {
+  line-height: 1;
+}
+#header .menu--right {
+  float: right;
+}
+#header .menu--right .menu__item {
+  font-size: 12px;
+  margin: 0 10px;
+}
+#header .menu__item {
+  font: 20px/1 'Microsoft JhengHei UI Light';
+  color: #000;
+  margin: 0 20px;
+}
+#header .menu__item:hover {
+  color: #ccc;
+}
+main {
+  width: 56vw;
+  border-bottom: 0.5px solid #ccc;
+  text-align: center;
+}
+@media screen and (max-width: 720px) {
+  main {
+    width: 80vw;
+  }
+}
+#footer {
+  position: relative;
+  width: 100%;
+  font: 13px/1 'Microsoft JhengHei UI Light';
+  padding: 15px;
+  text-align: center;
+}
+#footer .social-links {
+  display: inline-block;
+  margin: 0 5px;
+  color: #666;
+}
+.list {
+  width: 40vw;
+  margin: 0 auto;
+  text-align: left;
+}
+.list__title {
+  font: bold 30px/1 '方正粗黑宋简体';
+  color: #666;
+  margin: 20px 0;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.list__title::first-letter {
+  color: #ccc;
+}
+.list__title.closed + .list__list {
+  animation: slideUp 0.2s forwards;
+}
+.list__count {
+  font: bold 15px/1 'HP Simplified Light';
+  vertical-align: super;
+}
+.list__item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+  border-bottom: 0.5px dashed #ccc;
+}
+.list__item a {
+  flex: 1;
+  font: 15px/1.5 '方正粗黑宋简体';
+  letter-spacing: 1px;
+}
+.list__item a:hover {
+  text-decoration: underline;
+}
+.list__date {
+  flex-basis: 100px;
+  font: 13px/1.5 'Microsoft Yahei Light';
+  color: #666;
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 720px) {
+  .list {
+    width: 100%;
+  }
+}
+.post {
+  text-align: left;
+  margin: 0 0 15px;
+}
+.post__title,
+.post__subtitle,
+.post__reference {
+  font-family: '方正粗黑宋简体';
+  line-height: 1.5;
+}
+.post__title {
+  font-size: 50px;
+}
+.post__subtitle {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.post__reference {
+  font-size: 20px;
+}
+.post__reference a {
+  color: #ccc;
+}
+.post__reference a:hover,
+.post__reference a:active {
+  text-decoration: underline;
+}
+.post__meta {
+  font: 15px/2.5 'HP Simplified Light';
+  margin-bottom: 15px;
+}
+.post__date {
+  margin-right: 20px;
+  letter-spacing: 1px;
+}
+.post__category,
+.post__tag,
+.post__stat {
+  display: inline-block;
+  margin-right: 20px;
+}
+.post__category .category-link,
+.post__tag .tag-link {
+  letter-spacing: 2px;
+}
+.post__category .category-link:hover,
+.post__tag .tag-link:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+.post__stat .leancloud-visitors-count {
+  letter-spacing: 2px;
+}
+.post__aside {
+  position: fixed;
+  top: 62px;
+  left: calc(30vw + 830px);
+  right: 15px;
+}
+.post__actions {
+  margin-bottom: 5px;
+}
+.post__share,
+.post__top {
+  color: #ccc;
+  margin-right: 5px;
+}
+.post__share:hover,
+.post__top:hover {
+  color: #666;
+}
+.post__share .blogfont,
+.post__top .blogfont {
+  font-size: 15px;
+  margin-right: 2px;
+}
+.post__toc-text {
+  color: #ccc;
+  font: 13px/1.75 'HP Simplified Light';
+  transition: color 0.2s;
+}
+.post__toc-text:hover {
+  color: #000;
+}
+.post__toc-level-2::before {
+  content: '·';
+  margin-right: 5px;
+}
+.post__toc-level-3 {
+  text-indent: 1em;
+}
+.post__content {
+  font: 15px/2 '\5E7C\5706';
+}
+.post__content h2 {
+  margin-bottom: 10px;
+}
+.post__content code {
+  font-family: 'Microsoft Yahei Light';
+}
+.post__content figure {
+  border: 0.5px dotted #ccc;
+  border-left: 2px solid #ccc;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+.post__content pre,
+.post__content .gutter {
+  font: 15px/2 'Calibri Light';
+  letter-spacing: 1px;
+}
+.post__content pre {
+  padding-right: 15px;
+}
+.post__content .gutter {
+  width: 20px;
+}
+.post__content p {
+  margin-bottom: 15px;
+  color: #666;
+}
+.post__content p a {
+  text-decoration: underline;
+}
+@media screen and (max-width: 1200px) {
+  .post__title,
+  .post__subtitle,
+  .post__reference {
+    line-height: 1.2;
+  }
+}
+@media screen and (max-width: 720px) {
+  .post__aside {
+    display: none;
+  }
+}
+.pagination {
+  margin: 20px;
+}
+.pagination .page-number {
+  font-family: 'Microsoft Yahei Light';
+  margin: 0 10px;
+}
+.pagination .page-number:hover {
+  text-decoration: underline;
+}
+.block {
+  margin: 20px 0;
+}
+.block .block__item {
+  margin-bottom: 30px;
+}
+.block .block__title {
+  display: block;
+  color: #000;
+  font: 25px/1.5 '方正粗黑宋简体';
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.block .block__title:hover {
+  text-decoration: underline;
+}
+.block .block__date {
+  font: bold 15px/2.5 '\5b8b\4f53';
+  color: #666;
+  letter-spacing: 2px;
+}
+.block .block__excerpt {
+  text-align: left;
+  font: 14px/1.75 'Microsoft Yahei Light';
+  letter-spacing: 5px;
+}
+.block .block__more {
+  display: block;
+  font: bold 18px/1.5 '方正粗黑宋简体';
+  color: #666;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+.block .block__more:hover {
+  color: #ccc;
+}
+.comments {
+  margin-bottom: 30px;
+}
+.comments .vcount {
+  font-family: 'Microsoft Yahei Light';
+}
+.comments .vinput {
+  font-family: 'Microsoft Yahei Light';
+  transition: all 0.5s;
+}
+.comments .vinput:active,
+.comments .vinput:focus {
+  border-bottom-color: #000 !important;
+}
+.comments .vbtn:active,
+.comments .vbtn:hover {
+  border-color: #000 !important;
+  color: #000 !important;
+}
+.comments .vat {
+  color: #666 !important;
+}
+.comments .vsys,
+.comments .vempty,
+.comments .vpower {
+  display: none !important;
+}
+@media screen and (max-width: max-width) {
+  .comments {
+    margin: auto;
+  }
+}
