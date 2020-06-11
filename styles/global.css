@@ -5,7 +5,7 @@
 }
 .blogfont {
   font-family: "Blogfont" !important;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,6 +17,7 @@
   word-break: break-word;
 }
 a {
+  font-size: inherit;
   transition: color 0.2s;
 }
 a,
@@ -33,6 +34,9 @@ img {
 ul,
 li {
   list-style: none;
+}
+html {
+  font-size: 10px;
 }
 body {
   width: 100vw;
@@ -143,7 +147,7 @@ body {
 }
 #header {
   width: 100%;
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
 }
 #header .menu {
@@ -153,23 +157,28 @@ body {
   float: right;
 }
 #header .menu--right .menu__item {
-  font-size: 12px;
-  margin: 0 10px;
+  font-size: 1.2rem;
+  margin: 0 1rem;
 }
 #header .menu__item {
-  font: 20px/1 'Microsoft JhengHei UI Light';
+  font: 2rem/1 'Microsoft JhengHei UI Light';
   color: #000;
-  margin: 0 20px;
+  margin: 0 2rem;
 }
 #header .menu__item:hover {
   color: #ccc;
+}
+@media screen and (max-width: 1200px) {
+  #header .menu__item {
+    font-size: 1.8rem;
+  }
 }
 main {
   width: 56vw;
   border-bottom: 0.5px solid #ccc;
   text-align: center;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1200px) {
   main {
     width: 80vw;
   }
@@ -177,13 +186,13 @@ main {
 #footer {
   position: relative;
   width: 100%;
-  font: 13px/1 'Microsoft JhengHei UI Light';
-  padding: 15px;
+  font: 1.3rem/1 'Microsoft JhengHei UI Light';
+  padding: 1.5rem;
   text-align: center;
 }
 #footer .social-links {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 0.5rem;
   color: #666;
 }
 .list {
@@ -192,9 +201,9 @@ main {
   text-align: left;
 }
 .list__title {
-  font: bold 30px/1 '方正粗黑宋简体';
+  font: bold 3rem/1 '方正粗黑宋简体';
   color: #666;
-  margin: 20px 0;
+  margin: 2rem 0;
   letter-spacing: 3px;
   cursor: pointer;
 }
@@ -205,26 +214,26 @@ main {
   animation: slideUp 0.2s forwards;
 }
 .list__count {
-  font: bold 15px/1 'HP Simplified Light';
+  font: bold 1.5rem/1 'HP Simplified Light';
   vertical-align: super;
 }
 .list__item {
   display: flex;
   align-items: baseline;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   border-bottom: 0.5px dashed #ccc;
 }
 .list__item a {
   flex: 1;
-  font: 15px/1.5 '方正粗黑宋简体';
+  font: 1.5rem/1.5 '方正粗黑宋简体';
   letter-spacing: 1px;
 }
 .list__item a:hover {
   text-decoration: underline;
 }
 .list__date {
-  flex-basis: 100px;
-  font: 13px/1.5 'Microsoft Yahei Light';
+  flex-basis: 10rem;
+  font: 1.3rem/1.5 'Microsoft Yahei Light';
   color: #666;
   letter-spacing: 2px;
 }
@@ -232,10 +241,14 @@ main {
   .list {
     width: 100%;
   }
+  .list__date {
+    flex-basis: 9rem;
+    letter-spacing: 0;
+  }
 }
 .post {
   text-align: left;
-  margin: 0 0 15px;
+  margin: 0 0 1.5rem;
 }
 .post__title,
 .post__subtitle,
@@ -244,14 +257,14 @@ main {
   line-height: 1.5;
 }
 .post__title {
-  font-size: 50px;
+  font-size: 5rem;
 }
 .post__subtitle {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 .post__reference {
-  font-size: 20px;
+  font-size: 2rem;
 }
 .post__reference a {
   color: #ccc;
@@ -261,18 +274,19 @@ main {
   text-decoration: underline;
 }
 .post__meta {
-  font: 15px/2.5 'HP Simplified Light';
-  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  font: 1.5rem/2.5 'HP Simplified Light';
+  margin-bottom: 1.5rem;
 }
 .post__date {
-  margin-right: 20px;
+  margin-right: 2rem;
   letter-spacing: 1px;
 }
 .post__category,
 .post__tag,
 .post__stat {
-  display: inline-block;
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .post__category .category-link,
 .post__tag .tag-link {
@@ -289,16 +303,16 @@ main {
 .post__aside {
   position: fixed;
   top: 62px;
-  left: calc(30vw + 830px);
-  right: 15px;
+  right: 1.5rem;
+  max-width: 20rem;
 }
 .post__actions {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 .post__share,
 .post__top {
   color: #ccc;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 .post__share:hover,
 .post__top:hover {
@@ -306,12 +320,12 @@ main {
 }
 .post__share .blogfont,
 .post__top .blogfont {
-  font-size: 15px;
+  font-size: 1.5rem;
   margin-right: 2px;
 }
 .post__toc-text {
   color: #ccc;
-  font: 13px/1.75 'HP Simplified Light';
+  font: 1.3rem/1.75 'HP Simplified Light';
   transition: color 0.2s;
 }
 .post__toc-text:hover {
@@ -319,16 +333,16 @@ main {
 }
 .post__toc-level-2::before {
   content: '·';
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 .post__toc-level-3 {
   text-indent: 1em;
 }
 .post__content {
-  font: 15px/2 '\5E7C\5706';
+  font: 1.5rem/2 '\5E7C\5706';
 }
 .post__content h2 {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .post__content code {
   font-family: 'Microsoft Yahei Light';
@@ -337,23 +351,23 @@ main {
   border: 0.5px dotted #ccc;
   border-left: 2px solid #ccc;
   border-radius: 3px;
-  padding: 10px 15px;
-  margin-bottom: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
   overflow: auto;
 }
 .post__content pre,
 .post__content .gutter {
-  font: 15px/2 'Calibri Light';
+  font: 1.5rem/2 'Calibri Light';
   letter-spacing: 1px;
 }
 .post__content pre {
-  padding-right: 15px;
+  padding-right: 1.5rem;
 }
 .post__content .gutter {
   width: 20px;
 }
 .post__content p {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   color: #666;
 }
 .post__content p a {
@@ -363,62 +377,79 @@ main {
   .post__title,
   .post__subtitle,
   .post__reference {
-    line-height: 1.2;
+    line-height: 1.5;
   }
-}
-@media screen and (max-width: 720px) {
+  .post__title {
+    font-size: 2.5rem;
+  }
+  .post__subtitle {
+    font-size: 1.8rem;
+  }
+  .post__reference {
+    font-size: 1.5rem;
+  }
+  .post__meta {
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
   .post__aside {
     display: none;
   }
 }
 .pagination {
-  margin: 20px;
+  margin: 2rem;
 }
 .pagination .page-number {
   font-family: 'Microsoft Yahei Light';
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 .pagination .page-number:hover {
   text-decoration: underline;
 }
 .block {
-  margin: 20px 0;
+  margin: 2rem 0;
 }
-.block .block__item {
-  margin-bottom: 30px;
+.block__item {
+  margin-bottom: 3rem;
 }
-.block .block__title {
+.block__title {
   display: block;
   color: #000;
-  font: 25px/1.5 '方正粗黑宋简体';
-  margin-bottom: 10px;
+  font: 2.5rem/1.5 '方正粗黑宋简体';
+  margin-bottom: 1rem;
   letter-spacing: 1px;
 }
-.block .block__title:hover {
+.block__title:hover {
   text-decoration: underline;
 }
-.block .block__date {
-  font: bold 15px/2.5 '\5b8b\4f53';
+.block__date {
+  font: bold 1.5rem/2.5 '\5b8b\4f53';
   color: #666;
   letter-spacing: 2px;
 }
-.block .block__excerpt {
+.block__excerpt {
   text-align: left;
-  font: 14px/1.75 'Microsoft Yahei Light';
+  font: 1.4rem/1.75 'Microsoft Yahei Light';
   letter-spacing: 5px;
 }
-.block .block__more {
+.block__more {
   display: block;
-  font: bold 18px/1.5 '方正粗黑宋简体';
+  font: bold 1.8rem/1.5 '方正粗黑宋简体';
   color: #666;
-  margin: 20px 0;
+  margin: 2rem 0;
   letter-spacing: 2px;
 }
-.block .block__more:hover {
+.block__more:hover {
   color: #ccc;
 }
+@media screen and (max-width: 720px) {
+  .block__title {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+}
 .comments {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 .comments .vcount {
   font-family: 'Microsoft Yahei Light';
@@ -443,9 +474,4 @@ main {
 .comments .vempty,
 .comments .vpower {
   display: none !important;
-}
-@media screen and (max-width: max-width) {
-  .comments {
-    margin: auto;
-  }
 }

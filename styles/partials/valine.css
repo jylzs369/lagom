@@ -25,8 +25,3 @@
 .comments .vpower {
   display: none !important;
 }
-@media screen and (max-width: max-width) {
-  .comments {
-    margin: auto;
-  }
-}
